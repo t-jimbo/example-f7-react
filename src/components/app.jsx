@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
+import { LoginScreen } from "./LoginScreen";
 import {
-  f7,
   f7ready,
   App,
   Panel,
@@ -14,14 +13,6 @@ import {
   NavRight,
   Link,
   Block,
-  BlockTitle,
-  LoginScreen,
-  LoginScreenTitle,
-  List,
-  ListItem,
-  ListInput,
-  ListButton,
-  BlockFooter
 } from 'framework7-react';
 
 
@@ -29,31 +20,19 @@ import routes from '../js/routes';
 import store from '../js/store';
 
 const MyApp = () => {
-  // Login screen demo data
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
   // Framework7 Parameters
   const f7params = {
     name: 'f7 test', // App name
-      theme: 'auto', // Automatic theme detection
+    theme: 'auto', // Automatic theme detection
 
-
-
-
-      // App store
-      store: store,
-      // App routes
-      routes: routes,
+    // App store
+    store: store,
+    // App routes
+    routes: routes,
   };
-  const alertLoginData = () => {
-    f7.dialog.alert('Username: ' + username + '<br>Password: ' + password, () => {
-      f7.loginScreen.close();
-    });
-  }
+
   f7ready(() => {
-
-
     // Call F7 APIs here
   });
 
@@ -118,35 +97,7 @@ const MyApp = () => {
         </View>
       </Popup>
 
-      <LoginScreen id="my-login-screen">
-        <View>
-          <Page loginScreen>
-            <LoginScreenTitle>Login</LoginScreenTitle>
-            <List form>
-              <ListInput
-                type="text"
-                name="username"
-                placeholder="Your username"
-                value={username}
-                onInput={(e) => setUsername(e.target.value)}
-              ></ListInput>
-              <ListInput
-                type="password"
-                name="password"
-                placeholder="Your password"
-                value={password}
-                onInput={(e) => setPassword(e.target.value)}
-              ></ListInput>
-            </List>
-            <List>
-              <ListButton title="Sign In" onClick={() => alertLoginData()} />
-              <BlockFooter>
-                Some text about login information.<br />Click "Sign In" to close Login Screen
-              </BlockFooter>
-            </List>
-          </Page>
-        </View>
-      </LoginScreen>
+      <LoginScreen />
     </App>
   )
 }
