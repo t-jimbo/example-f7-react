@@ -1,9 +1,9 @@
-import React from 'react';
-import { Page, Navbar, BlockTitle, Block, useStore } from 'framework7-react';
+import React from "react";
+import { Page, Navbar, BlockTitle, Block, useStore } from "framework7-react";
 
 const ProductPage = (props) => {
   const productId = props.f7route.params.id;
-  const products = useStore('products');
+  const products = useStore("products");
 
   var currentProduct;
   products.forEach(function (product) {
