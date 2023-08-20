@@ -4,11 +4,9 @@ import { createRoot } from "react-dom/client";
 import App from "./app.jsx";
 
 // Import Framework7
-import Framework7 from "framework7/lite-bundle";
-
+import Framework7 from "framework7/lite/bundle";
 // Import Framework7-React Plugin
 import Framework7React from "framework7-react";
-
 // Import Framework7 Styles
 import "framework7/css/bundle";
 
