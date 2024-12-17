@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { LoginScreen } from "./components/LoginScreen";
 import {
-  f7ready,
   App,
   Panel,
   Views,
@@ -15,10 +13,10 @@ import {
   Block,
 } from "framework7-react";
 
-import routes from "./js/routes.js";
+import routes from "./js/routes";
 import store from "./js/store.js";
 
-const MyApp = () => {
+const MyApp: React.FC = () => {
   // Framework7 Parameters
   const f7params = {
     name: "f7 test", // App name
@@ -29,10 +27,6 @@ const MyApp = () => {
     // App routes
     routes: routes,
   };
-
-  f7ready(() => {
-    // Call F7 APIs here
-  });
 
   return (
     <App {...f7params}>
